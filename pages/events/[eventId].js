@@ -4,18 +4,19 @@ import { getEventById } from "../../dummy-data";
 import  EventLogistics from "../../components/event-detail/event-logistics";
 import EventSummary from "../../components/event-detail/event-summary";
 import EventContent from "../../components/event-detail/event-content";
+import ErrorAlert from "../../components/ui/error-alert";
+import Button from "../../components/ui/button";
  
 function EventDetailPage () {
 
     const router = useRouter()
     const eventId = router.query.eventId
-    console.log('eventId: ', eventId);
 
     const event = getEventById(eventId)
-    console.log('event: ', event);
 
     if(!event) {
-        return <p>No event found!</p>
+        return <Fragment><ErrorAlert><p>Подій не знайдено</p></ErrorAlert>
+        <div className="center"><Button link='/events'>Дивитись всі події</Button></div></Fragment>
     }
 
     return (

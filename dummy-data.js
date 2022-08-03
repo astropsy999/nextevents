@@ -7,7 +7,7 @@ const DUMMY_EVENTS = [
       location: 'Шевченка 25, 12345 Київ',
       date: '2021-05-12',
       image: 'images/fotis-fotopoulos.jpg',
-      isFeatured: true,
+      isFeatured: false,
     },
     {
       id: 'e2',
